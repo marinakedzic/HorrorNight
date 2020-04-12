@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/player"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".PlayerInfo">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#75FFFFFF"
+        android:fontFamily="@font/creepster"
+        android:gravity="center"
+        android:text="Will you survive horror night?"
+        android:textColor="#000000"
+        android:textSize="52sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="29dp"
+        android:background="#B0FFFFFF"
+        android:fontFamily="@font/coda"
+        android:text="Type your name:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="29dp"
+        android:background="#B0000000"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="Mario"
+        android:inputType="textPersonName"
+        android:textColor="#c4c4c4" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="29dp"
+        android:background="#B0FFFFFF"
+        android:fontFamily="@font/coda"
+        android:text="Type your friend's name:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/friendName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="29dp"
+        android:background="#B0000000"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="Maria"
+        android:inputType="textPersonName"
+        android:textColor="#c4c4c4" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="190dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="120dp"
+        android:background="#C4C4C4"
+        android:fontFamily="@font/creepster"
+        android:onClick="gameStarts"
+        android:text="Let's begin"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        />
+</LinearLayout>

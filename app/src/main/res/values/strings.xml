@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HorrorNight</string>
+    <string name="horor_night">HOROR\nNIGHT</string>
+    <string name="play">Play</string>
+    <string name="storystart">Sedis kuci i ciliras u netflix, odjednom nestaje struja i cujes neko iz kuhinje izgovara tvoje ime i cujes zvuk ostrenja noza</string>
+    <string name="goOutside">Pobegao si iz kuce, ali te susrece drug i ti mu ispricas sta se desilo. On kaze da si se utripovao i da se lepo vratite unutra da proverite ima li stvarno nekoga.</string>
+</resources>
