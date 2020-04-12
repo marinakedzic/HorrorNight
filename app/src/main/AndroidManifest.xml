@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".story.GoOutside"></activity>
+        <activity android:name=".story.Forest" />
+        <activity android:name=".story.Run" />
+        <activity android:name=".story.GoInside" />
+        <activity android:name=".End" />
+        <activity android:name=".story.GoOutside" />
         <activity android:name=".story.StayHome" />
         <activity android:name=".Start" />
         <activity android:name=".PlayerInfo" />

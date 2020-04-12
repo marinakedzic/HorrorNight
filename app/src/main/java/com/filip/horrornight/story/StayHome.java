@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.filip.horrornight.End;
 import com.filip.horrornight.R;
 
 public class StayHome extends AppCompatActivity {
@@ -28,17 +29,20 @@ public class StayHome extends AppCompatActivity {
     }
     public void odabir(View view) {
         String kraj;
+        Boolean uspeh = false;
         switch (view.getId()) {
             case R.id.leftb:
-                 kraj= "";
-                Intent intentl = new Intent(this, StayHome.class);
+                kraj= "Je l stvarno mislis da je pametno otici direktno ka ludaku?";
+                Intent intentl = new Intent(this, End.class);
                 intentl.putExtra("kraj",kraj);
+                intentl.putExtra("uspeh",uspeh);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
-                kraj = "";
-                Intent intentr = new Intent(this, GoOutside.class);
+                kraj = "Sta mislis gde ce prvo da pogleda?";
+                Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("kraj",kraj);
+                intentr.putExtra("uspeh",uspeh);
                 startActivity(intentr);
                 break;
         }

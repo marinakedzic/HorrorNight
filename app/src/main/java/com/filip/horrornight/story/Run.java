@@ -9,9 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.filip.horrornight.End;
 import com.filip.horrornight.R;
 
-public class GoOutside extends AppCompatActivity {
+public class Run extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +23,21 @@ public class GoOutside extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.background);
-        stroyText.setText(R.string.goOutside);
-        left.setText("Vrati se u kucu");
-        right.setText("Bezite zajedno");
+        stroyText.setText("Gde hocete da bezite? Suma je kraci put da se stigne do grada. A ako odete putem ka gradu duze je ali je sve osvetljeno.");
+        left.setText("Suma");
+        right.setText("Gradski put");
     }
     public void odabir(View view) {
         switch (view.getId()) {
             case R.id.leftb:
-                Intent intentl = new Intent(this, GoInside.class);
+                Intent intentl = new Intent(this, Forest.class);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
-                Intent intentr = new Intent(this, Run.class);
+                String kraj = "Izabrali ste bezbedan put. Imate srece susrece vas komsija.";
+                Intent intentr = new Intent(this, End.class);
+                intentr.putExtra("kraj",kraj);
+                intentr.putExtra("uspeh", true);
                 startActivity(intentr);
                 break;
         }

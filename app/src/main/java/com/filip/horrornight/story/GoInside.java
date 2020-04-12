@@ -9,9 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.filip.horrornight.End;
 import com.filip.horrornight.R;
 
-public class GoOutside extends AppCompatActivity {
+public class GoInside extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +23,25 @@ public class GoOutside extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.background);
-        stroyText.setText(R.string.goOutside);
-        left.setText("Vrati se u kucu");
-        right.setText("Bezite zajedno");
+        stroyText.setText("Odlucio si da ipak udjete. Drug predlaze da se odvojite i da trazite manijaka.");
+        left.setText("Poslusaj ga");
+        right.setText("Ipak idete zajedno");
     }
     public void odabir(View view) {
+        String kraj;
         switch (view.getId()) {
             case R.id.leftb:
-                Intent intentl = new Intent(this, GoInside.class);
+                kraj = "Od kad je pametno da se odvajate ma daj prvo i osnovno pravilo u filmovima.";
+                Intent intentl = new Intent(this, End.class);
+                intentl.putExtra("kraj", kraj);
+                intentl.putExtra("uspeh",false);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
-                Intent intentr = new Intent(this, Run.class);
+                kraj = "Bravo bre uspeli ste da savladate manijaka!";
+                Intent intentr = new Intent(this, End.class);
+                intentr.putExtra("kraj", kraj);
+                intentr.putExtra("uspeh",true);
                 startActivity(intentr);
                 break;
         }
