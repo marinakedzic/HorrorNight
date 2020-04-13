@@ -9,24 +9,37 @@
 
     <ImageView
         android:id="@+id/imageS"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/again"/>
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/story"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:padding="20dp"
-        android:background="@color/black"
-        android:textColor="#ffffff"/>
+        android:layout_margin="50dp"
+        android:padding="10dp"
+        android:background="#33000000"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/creepster"/>
 
-        <Button
-            android:id="@+id/again"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:onClick="again"/>
+    <Button
+        android:id="@+id/again"
+        android:layout_width="190dp"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:background="#C4C4C4"
+        android:fontFamily="@font/creepster"
+        android:onClick="again"
+        android:textColor="@color/black"
+        android:textSize="34sp" />
 </RelativeLayout>

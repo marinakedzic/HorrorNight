@@ -22,7 +22,7 @@ public class StayHome extends AppCompatActivity {
         TextView stroyText = findViewById(R.id.story);
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
-        image.setImageResource(R.drawable.background);
+        image.setImageResource(R.drawable.kitchen);
         stroyText.setText("Ipak ostajes sta ces sad da uradis, jesi li se uplasio ili ne?");
         left.setText("Proverices kuhinju");
         right.setText("Bezis ispod kreveta");
@@ -36,6 +36,7 @@ public class StayHome extends AppCompatActivity {
                 Intent intentl = new Intent(this, End.class);
                 intentl.putExtra("kraj",kraj);
                 intentl.putExtra("uspeh",uspeh);
+                intentl.putExtra("slika",R.drawable.h);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
@@ -43,6 +44,7 @@ public class StayHome extends AppCompatActivity {
                 Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("kraj",kraj);
                 intentr.putExtra("uspeh",uspeh);
+                intentr.putExtra("slika",R.drawable.underbed);
                 startActivity(intentr);
                 break;
         }

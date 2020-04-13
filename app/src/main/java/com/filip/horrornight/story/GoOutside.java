@@ -21,7 +21,7 @@ public class GoOutside extends AppCompatActivity {
         TextView stroyText = findViewById(R.id.story);
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
-        image.setImageResource(R.drawable.background);
+        image.setImageResource(R.drawable.outside);
         stroyText.setText(R.string.goOutside);
         left.setText("Vrati se u kucu");
         right.setText("Bezite zajedno");

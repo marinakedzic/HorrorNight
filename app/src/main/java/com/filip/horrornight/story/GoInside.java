@@ -22,7 +22,7 @@ public class GoInside extends AppCompatActivity {
         TextView stroyText = findViewById(R.id.story);
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
-        image.setImageResource(R.drawable.background);
+        image.setImageResource(R.drawable.goagain);
         stroyText.setText("Odlucio si da ipak udjete. Drug predlaze da se odvojite i da trazite manijaka.");
         left.setText("Poslusaj ga");
         right.setText("Ipak idete zajedno");
@@ -35,6 +35,7 @@ public class GoInside extends AppCompatActivity {
                 Intent intentl = new Intent(this, End.class);
                 intentl.putExtra("kraj", kraj);
                 intentl.putExtra("uspeh",false);
+                intentl.putExtra("slika",R.drawable.split);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
@@ -42,6 +43,7 @@ public class GoInside extends AppCompatActivity {
                 Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("kraj", kraj);
                 intentr.putExtra("uspeh",true);
+                intentr.putExtra("slika",R.drawable.nosplit);
                 startActivity(intentr);
                 break;
         }

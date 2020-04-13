@@ -22,7 +22,7 @@ public class Run extends AppCompatActivity {
         TextView stroyText = findViewById(R.id.story);
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
-        image.setImageResource(R.drawable.background);
+        image.setImageResource(R.drawable.run);
         stroyText.setText("Gde hocete da bezite? Suma je kraci put da se stigne do grada. A ako odete putem ka gradu duze je ali je sve osvetljeno.");
         left.setText("Suma");
         right.setText("Gradski put");
@@ -38,6 +38,7 @@ public class Run extends AppCompatActivity {
                 Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("kraj",kraj);
                 intentr.putExtra("uspeh", true);
+                intentr.putExtra("slika", R.drawable.komsa);
                 startActivity(intentr);
                 break;
         }

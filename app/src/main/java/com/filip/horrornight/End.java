@@ -17,25 +17,29 @@ public class End extends AppCompatActivity {
         setContentView(R.layout.activity_end);
         ImageView image = findViewById(R.id.imageS);
         TextView stroyText = findViewById(R.id.story);
+
         Button again = findViewById(R.id.again);
-        image.setImageResource(R.drawable.background);
         Intent intent = getIntent();
         String bravo = null;
         String kraj = null;
         boolean uspeh = false;
+        int slika;
 
         if(intent != null)
         {
             kraj = intent.getStringExtra("kraj");
             uspeh = intent.getBooleanExtra("uspeh", false);
-        }
+            slika = intent.getIntExtra("slika",R.drawable.h);
+            image.setImageResource(slika);
+
             if(uspeh){
              bravo = "Bravo uspesno si ovo odradio";
-             again.setText("Probaj da vidis sve krajeve");
-        }
-        else{
-            bravo = "Zao mi je, niste uspeli";
-            again.setText("Pokusaj ponovo");
+             again.setText("TRY MORE!");
+            }
+            else{
+                bravo = "Zao mi je, niste uspeli";
+                again.setText("TRY AGAIN!");
+            }
         }
         String end = bravo + " " + kraj;
         stroyText.setText(end);

@@ -22,10 +22,10 @@ public class Start extends AppCompatActivity {
         TextView stroyText = findViewById(R.id.story);
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
-        image.setImageResource(R.drawable.background);
+        image.setImageResource(R.drawable.netflix);
         stroyText.setText(R.string.storystart);
-        left.setText("Ostajes kuci da istrazis sta se desava");
-        right.setText("Bezis napolje glavom bez obzira");
+        left.setText("Ostajes kuci");
+        right.setText("Bezis napolje");
 
     }
 

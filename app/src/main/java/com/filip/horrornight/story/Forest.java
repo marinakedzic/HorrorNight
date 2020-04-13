@@ -35,6 +35,7 @@ public class Forest extends AppCompatActivity {
                 Intent intentl = new Intent(this, End.class);
                 intentl.putExtra("kraj",kraj);
                 intentl.putExtra("uspeh",false);
+                intentl.putExtra("slika",R.drawable.help);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
@@ -42,6 +43,7 @@ public class Forest extends AppCompatActivity {
                 Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("kraj",kraj);
                 intentr.putExtra("uspeh",false);
+                intentr.putExtra("slika",R.drawable.nohelp);
                 startActivity(intentr);
                 break;
         }

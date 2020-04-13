@@ -9,8 +9,12 @@
 
     <ImageView
         android:id="@+id/imageS"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:layout_above="@+id/buttons"/>
 
     <TextView
@@ -18,9 +22,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:padding="20dp"
-        android:background="@color/black"
-        android:textColor="#ffffff"/>
+        android:layout_margin="50dp"
+        android:padding="10dp"
+        android:background="#55000000"
+        android:textColor="#ffffff"
+        android:textSize="27sp"
+        android:fontFamily="@font/coda"
+        android:gravity="center"/>
     <LinearLayout
         android:id="@+id/buttons"
         android:layout_width="match_parent"
@@ -34,14 +42,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_weight="1"
-        android:onClick="odabir"/>
+        android:textSize="30sp"
+        android:onClick="odabir"
+        android:fontFamily="@font/creepster"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/rightb"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:onClick="odabir"/>
+        android:textSize="30sp"
+        android:onClick="odabir"
+        android:fontFamily="@font/creepster"
+        android:textColor="@color/black"
+        android:gravity="center"/>
     </LinearLayout>
 
 
