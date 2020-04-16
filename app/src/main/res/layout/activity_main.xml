@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/horror_nigh"
+        android:id="@+id/horror_night"
         android:layout_width="307dp"
         android:layout_height="295dp"
         android:layout_gravity="center"

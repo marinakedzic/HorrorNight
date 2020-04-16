@@ -42,7 +42,7 @@ public class End extends AppCompatActivity {
                 again.setText(R.string.tryAgain);
             }
         }
-        String endAll = alive + " " + end;
+        String endAll = alive + "\n" + end;
         stroyText.setText(endAll);
 
 

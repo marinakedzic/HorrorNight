@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,10 @@ import com.filip.horrornight.story.GoOutside;
 import com.filip.horrornight.story.StayHome;
 
 public class Start extends AppCompatActivity {
-
+    UserRepository userRepository;
+    int id;
+    String name;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +28,14 @@ public class Start extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.netflix);
-        stroyText.setText(R.string.storystart);
+        String packageName = getPackageName();
+        userRepository = new UserRepository(getApplication());
+        SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
+        id = sharedPreferences.getInt("id", 0);
+        user = userRepository.find(id);
+        name = user.getName();
+        String text = String.format(getResources().getString(R.string.storystart), name);
+        stroyText.setText(text);
         left.setText(R.string.stayHome);
         right.setText(R.string.runOutside);
 

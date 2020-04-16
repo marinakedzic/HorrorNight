@@ -18,9 +18,10 @@ import com.filip.horrornight.UserRepository;
 
 public class GoInside extends AppCompatActivity {
     SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
     User user;
     UserRepository userRepository;
+    String friendName;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,17 +31,19 @@ public class GoInside extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.goagain);
-        stroyText.setText(R.string.goInside);
-        left.setText(R.string.agreeInside);
-        right.setText(R.string.dontAgreeInside);
+        userRepository = new UserRepository(getApplication());
         String packageName = getPackageName();
         sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
         int id = sharedPreferences.getInt("id", 1);
-        userRepository = new UserRepository(getApplication());
         user = userRepository.find(id);
+        friendName = user.getFriendsName();
+        String text = String.format(getResources().getString(R.string.goInside), friendName);
+        stroyText.setText(text);
+        left.setText(R.string.agreeInside);
+        right.setText(R.string.dontAgreeInside);
     }
     public void odabir(View view) {
-        String kraj;
+        String end;
         switch (view.getId()) {
             case R.id.leftb:
                 boolean isInside1 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isInside1", true);
@@ -52,11 +55,12 @@ public class GoInside extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                kraj = getString(R.string.endSplit);
+                name = user.getName();
+                end = String.format(getResources().getString(R.string.endSplit), name);
                 Intent intentl = new Intent(this, End.class);
-                intentl.putExtra("kraj", kraj);
-                intentl.putExtra("uspeh",false);
-                intentl.putExtra("slika",R.drawable.split);
+                intentl.putExtra("end", end);
+                intentl.putExtra("success",false);
+                intentl.putExtra("image",R.drawable.split);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
@@ -69,11 +73,11 @@ public class GoInside extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                kraj = getString(R.string.endNoSplit);
+                end = String.format(getResources().getString(R.string.endNoSplit), friendName);
                 Intent intentr = new Intent(this, End.class);
-                intentr.putExtra("kraj", kraj);
-                intentr.putExtra("uspeh",true);
-                intentr.putExtra("slika",R.drawable.nosplit);
+                intentr.putExtra("end", end);
+                intentr.putExtra("success",true);
+                intentr.putExtra("image",R.drawable.nosplit);
                 startActivity(intentr);
                 break;
         }

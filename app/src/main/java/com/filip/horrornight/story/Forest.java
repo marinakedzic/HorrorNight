@@ -20,6 +20,8 @@ public class Forest extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     UserRepository userRepository;
     User user;
+    String friendName;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +31,16 @@ public class Forest extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.background);
-        stroyText.setText(R.string.storyForest);
-        left.setText(R.string.help);
-        right.setText(R.string.noHelp);
         String packageName = getPackageName();
         sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
         int id = sharedPreferences.getInt("id", 1);
         userRepository = new UserRepository(getApplication());
         user = userRepository.find(id);
+        friendName = user.getFriendsName();
+        String text = String.format(getResources().getString(R.string.storyForest), friendName, friendName);
+        stroyText.setText(text);
+        left.setText(R.string.help);
+        right.setText(R.string.noHelp);
     }
     public void odabir(View view) {
         String end;
@@ -68,7 +72,8 @@ public class Forest extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                end = getString(R.string.endNoHelp);
+                name = user.getName();
+                end = String.format(getResources().getString(R.string.endNoHelp), name);
                 Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("end",end);
                 intentr.putExtra("success",false);

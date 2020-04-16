@@ -32,7 +32,7 @@
         android:background="#C4C4C4"
         android:fontFamily="@font/creepster"
         android:onClick="gameStarts"
-        android:text="Resume"
+        android:text="@string/resumeButton"
         android:textColor="@color/black"
         android:textSize="34sp" />
     <Button
@@ -44,7 +44,7 @@
         android:background="#C4C4C4"
         android:fontFamily="@font/creepster"
         android:onClick="showProfile"
-        android:text="Profile"
+        android:text="@string/profileButton"
         android:textColor="@color/black"
         android:textSize="34sp" />
     <Button
@@ -56,7 +56,7 @@
     android:background="#C4C4C4"
     android:fontFamily="@font/creepster"
     android:onClick="exit"
-    android:text="Exit"
+    android:text="@string/exitButton"
     android:textColor="@color/black"
     android:textSize="34sp" />
 

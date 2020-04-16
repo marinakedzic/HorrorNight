@@ -19,7 +19,7 @@
         android:background="#75FFFFFF"
         android:fontFamily="@font/creepster"
         android:gravity="center"
-        android:text="Will you survive horror night?"
+        android:text="@string/will_you_survive"
         android:textColor="#000000"
         android:textSize="52sp" />
 
@@ -31,7 +31,7 @@
         android:layout_marginTop="100dp"
         android:background="#B0FFFFFF"
         android:fontFamily="@font/im_fell_dw_pica"
-        android:text="Type your name:"
+        android:text="@string/your_name"
         android:textColor="@color/black"
         android:textSize="25sp" />
 
@@ -44,7 +44,7 @@
         android:background="#B0000000"
         android:ems="10"
         android:gravity="center_horizontal"
-        android:hint="Mario"
+        android:hint="@string/mario"
         android:inputType="textPersonName"
         android:textColor="#c4c4c4" />
 
@@ -56,7 +56,7 @@
         android:layout_marginTop="29dp"
         android:background="#B0FFFFFF"
         android:fontFamily="@font/im_fell_dw_pica"
-        android:text="Type your friend's name:"
+        android:text="@string/type_your_friend_s_name"
         android:textColor="@color/black"
         android:textSize="25sp" />
 
@@ -69,7 +69,7 @@
         android:background="#B0000000"
         android:ems="10"
         android:gravity="center_horizontal"
-        android:hint="Maria"
+        android:hint="@string/maria"
         android:inputType="textPersonName"
         android:textColor="#c4c4c4" />
 
@@ -78,11 +78,11 @@
         android:layout_width="190dp"
         android:layout_height="58dp"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="70dp"
         android:background="#C4C4C4"
         android:fontFamily="@font/creepster"
         android:onClick="gameStarts"
-        android:text="Let's begin"
+        android:text="@string/let_s_begin"
         android:textColor="#000000"
         android:textSize="34sp"
         />

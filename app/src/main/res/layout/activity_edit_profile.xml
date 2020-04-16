@@ -18,7 +18,7 @@
         android:background="#75FFFFFF"
         android:fontFamily="@font/creepster"
         android:gravity="center"
-        android:text="Edit Profile"
+        android:text="@string/edit_profile"
         android:textColor="#000000"
         android:textSize="52sp" />
 
@@ -30,7 +30,7 @@
         android:layout_marginTop="100dp"
         android:background="#B0FFFFFF"
         android:fontFamily="@font/im_fell_dw_pica"
-        android:text="Your name: "
+        android:text="@string/your_name"
         android:textColor="@color/black"
         android:textSize="25sp" />
 
@@ -43,7 +43,7 @@
         android:background="#B0000000"
         android:ems="10"
         android:gravity="center_horizontal"
-        android:hint="Mario"
+        android:hint="@string/mario"
         android:inputType="textPersonName"
         android:textColor="#c4c4c4" />
 
@@ -55,7 +55,7 @@
         android:layout_marginTop="29dp"
         android:background="#B0FFFFFF"
         android:fontFamily="@font/im_fell_dw_pica"
-        android:text="Type your friend's name:"
+        android:text="@string/type_your_friend_s_name"
         android:textColor="@color/black"
         android:textSize="25sp" />
 
@@ -68,7 +68,7 @@
         android:background="#B0000000"
         android:ems="10"
         android:gravity="center_horizontal"
-        android:hint="Mario"
+        android:hint="@string/maria"
         android:inputType="textPersonName"
         android:textColor="#c4c4c4" />
 
@@ -81,7 +81,7 @@
         android:background="#C4C4C4"
         android:fontFamily="@font/creepster"
         android:onClick="onSave"
-        android:text="Save"
+        android:text="@string/buttonSave"
         android:textColor="@color/black"
         android:textSize="34sp" />
 </LinearLayout>

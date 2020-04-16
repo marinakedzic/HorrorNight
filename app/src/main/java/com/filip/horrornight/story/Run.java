@@ -18,9 +18,10 @@ import com.filip.horrornight.UserRepository;
 
 public class Run extends AppCompatActivity {
     SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
     User user;
     UserRepository userRepository;
+    String name;
+    String friendName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +56,9 @@ public class Run extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                String end = getString(R.string.endCity);
+                name = user.getName();
+                friendName = user.getFriendsName();
+                String end = String.format(getResources().getString(R.string.endCity), name, friendName);
                 Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("end",end);
                 intentr.putExtra("success", true);
