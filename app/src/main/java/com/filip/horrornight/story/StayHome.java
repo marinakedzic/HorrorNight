@@ -63,7 +63,7 @@ public class StayHome extends AppCompatActivity {
                 startActivity(intentl);
                 break;
             case R.id.rightb:
-                boolean isStay2 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isStay1", true);
+                boolean isStay2 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isStay2", true);
                 if(isStay2){
                     getSharedPreferences("end", MODE_PRIVATE).edit()
                             .putBoolean("isStay2", false).apply();

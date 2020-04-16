@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class}, version = 1, exportSchema = true)
 public abstract class UserDatabase extends RoomDatabase {
         private static volatile UserDatabase DATABASE;
         private static final String DATABASE_NAME = "user_database";
