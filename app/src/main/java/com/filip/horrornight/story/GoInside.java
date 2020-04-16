@@ -3,6 +3,7 @@ package com.filip.horrornight.story;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,9 +12,14 @@ import android.widget.TextView;
 
 import com.filip.horrornight.End;
 import com.filip.horrornight.R;
+import com.filip.horrornight.User;
+import com.filip.horrornight.UserRepository;
 
 public class GoInside extends AppCompatActivity {
-
+    boolean inside1 = true;
+    boolean inside2 = true;
+    User user;
+    UserRepository userRepository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +32,23 @@ public class GoInside extends AppCompatActivity {
         stroyText.setText("Odlucio si da ipak udjete. Drug predlaze da se odvojite i da trazite manijaka.");
         left.setText("Poslusaj ga");
         right.setText("Ipak idete zajedno");
+        userRepository = new UserRepository(getApplication());
     }
     public void odabir(View view) {
         String kraj;
         switch (view.getId()) {
             case R.id.leftb:
+                if(inside1){
+                    inside1 = false;
+                    String packageName = getPackageName();
+                    SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
+                    int id = sharedPreferences.getInt("id", 0);
+                    user = userRepository.find(id);
+                    int ends = user.getEnds();
+                    ends+=1;
+                    user.setEnds(ends);
+                    userRepository.update(user);
+                }
                 kraj = "Od kad je pametno da se odvajate ma daj prvo i osnovno pravilo u filmovima.";
                 Intent intentl = new Intent(this, End.class);
                 intentl.putExtra("kraj", kraj);
@@ -39,6 +57,17 @@ public class GoInside extends AppCompatActivity {
                 startActivity(intentl);
                 break;
             case R.id.rightb:
+                if(inside2){
+                    inside2 = false;
+                    String packageName = getPackageName();
+                    SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
+                    int id = sharedPreferences.getInt("id", 0);
+                    user = userRepository.find(id);
+                    int ends = user.getEnds();
+                    ends+=1;
+                    user.setEnds(ends);
+                    userRepository.update(user);
+                }
                 kraj = "Bravo bre uspeli ste da savladate manijaka!";
                 Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("kraj", kraj);

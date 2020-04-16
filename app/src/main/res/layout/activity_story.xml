@@ -10,8 +10,6 @@
     <ImageView
         android:id="@+id/imageS"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -24,7 +22,7 @@
         android:layout_centerInParent="true"
         android:layout_margin="50dp"
         android:padding="10dp"
-        android:background="#55000000"
+        android:background="#33000000"
         android:textColor="#ffffff"
         android:textSize="27sp"
         android:fontFamily="@font/coda"
@@ -39,8 +37,7 @@
     <Button
         android:id="@+id/leftb"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:textSize="30sp"
         android:onClick="odabir"
@@ -50,7 +47,7 @@
     <Button
         android:id="@+id/rightb"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:textSize="30sp"
         android:onClick="odabir"

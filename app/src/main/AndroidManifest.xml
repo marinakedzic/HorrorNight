@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".EditProfile"></activity>
+        <activity android:name=".ShowPlayer" />
+        <activity android:name=".PlayerScreen" />
         <activity android:name=".story.Forest" />
         <activity android:name=".story.Run" />
         <activity android:name=".story.GoInside" />
