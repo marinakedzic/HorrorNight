@@ -12,6 +12,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSharedPreferences("end", MODE_PRIVATE).edit()
+                .putBoolean("isForest1", true).apply();
+        getSharedPreferences("end", MODE_PRIVATE).edit()
+                .putBoolean("isForest2", true).apply();
+        getSharedPreferences("end", MODE_PRIVATE).edit()
+                .putBoolean("isStay1", true).apply();
+        getSharedPreferences("end", MODE_PRIVATE).edit()
+                .putBoolean("isStay2", true).apply();
+        getSharedPreferences("end", MODE_PRIVATE).edit()
+                .putBoolean("isRun", true).apply();
+        getSharedPreferences("end", MODE_PRIVATE).edit()
+                .putBoolean("isInside1", true).apply();
+        getSharedPreferences("end", MODE_PRIVATE).edit()
+                .putBoolean("isInside2", true).apply();
+
+
 
         Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                 .getBoolean("isFirstRun", true);

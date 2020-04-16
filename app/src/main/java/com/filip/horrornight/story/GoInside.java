@@ -16,8 +16,8 @@ import com.filip.horrornight.User;
 import com.filip.horrornight.UserRepository;
 
 public class GoInside extends AppCompatActivity {
-    boolean inside1 = true;
-    boolean inside2 = true;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     User user;
     UserRepository userRepository;
     @Override
@@ -32,18 +32,24 @@ public class GoInside extends AppCompatActivity {
         stroyText.setText("Odlucio si da ipak udjete. Drug predlaze da se odvojite i da trazite manijaka.");
         left.setText("Poslusaj ga");
         right.setText("Ipak idete zajedno");
+        String packageName = getPackageName();
+        sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putBoolean("inside1",true);
+        editor.putBoolean("inside2",true);
+        editor.apply();
+        int id = sharedPreferences.getInt("id", 1);
         userRepository = new UserRepository(getApplication());
+        user = userRepository.find(id);
     }
     public void odabir(View view) {
         String kraj;
         switch (view.getId()) {
             case R.id.leftb:
-                if(inside1){
-                    inside1 = false;
-                    String packageName = getPackageName();
-                    SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
-                    int id = sharedPreferences.getInt("id", 0);
-                    user = userRepository.find(id);
+                boolean isInside1 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isInside1", true);
+                if(isInside1){
+                    getSharedPreferences("end", MODE_PRIVATE).edit()
+                            .putBoolean("isInside1", false).apply();
                     int ends = user.getEnds();
                     ends+=1;
                     user.setEnds(ends);
@@ -57,12 +63,10 @@ public class GoInside extends AppCompatActivity {
                 startActivity(intentl);
                 break;
             case R.id.rightb:
-                if(inside2){
-                    inside2 = false;
-                    String packageName = getPackageName();
-                    SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
-                    int id = sharedPreferences.getInt("id", 0);
-                    user = userRepository.find(id);
+                boolean isInside2 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isInside2", true);
+                if(isInside2){
+                    getSharedPreferences("end", MODE_PRIVATE).edit()
+                            .putBoolean("isInside2", false).apply();
                     int ends = user.getEnds();
                     ends+=1;
                     user.setEnds(ends);

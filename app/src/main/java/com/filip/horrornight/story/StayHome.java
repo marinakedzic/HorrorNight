@@ -16,8 +16,7 @@ import com.filip.horrornight.User;
 import com.filip.horrornight.UserRepository;
 
 public class StayHome extends AppCompatActivity {
-    boolean stay1 = true;
-    boolean stay2 = true;
+    SharedPreferences sharedPreferences;
     User user;
     UserRepository userRepository;
     @Override
@@ -32,15 +31,21 @@ public class StayHome extends AppCompatActivity {
         stroyText.setText("Ipak ostajes sta ces sad da uradis, jesi li se uplasio ili ne?");
         left.setText("Proverices kuhinju");
         right.setText("Bezis ispod kreveta");
+        String packageName = getPackageName();
+        sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
+        int id = sharedPreferences.getInt("id", 1);
         userRepository = new UserRepository(getApplication());
+        user = userRepository.find(id);
     }
     public void odabir(View view) {
         String kraj;
         Boolean uspeh = false;
         switch (view.getId()) {
             case R.id.leftb:
-                if(stay1){
-                    stay1 = false;
+                boolean isStay1 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isStay1", true);
+                if(isStay1){
+                    getSharedPreferences("end", MODE_PRIVATE).edit()
+                            .putBoolean("isStay1", false).apply();
                     String packageName = getPackageName();
                     SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
                     int id = sharedPreferences.getInt("id", 0);
@@ -58,8 +63,10 @@ public class StayHome extends AppCompatActivity {
                 startActivity(intentl);
                 break;
             case R.id.rightb:
-                if(stay2){
-                    stay2 = false;
+                boolean isStay2 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isStay1", true);
+                if(isStay2){
+                    getSharedPreferences("end", MODE_PRIVATE).edit()
+                            .putBoolean("isStay2", false).apply();
                     String packageName = getPackageName();
                     SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
                     int id = sharedPreferences.getInt("id", 0);

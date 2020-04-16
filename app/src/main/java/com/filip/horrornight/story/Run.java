@@ -16,7 +16,8 @@ import com.filip.horrornight.User;
 import com.filip.horrornight.UserRepository;
 
 public class Run extends AppCompatActivity {
-    boolean run = true;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     User user;
     UserRepository userRepository;
     @Override
@@ -31,7 +32,12 @@ public class Run extends AppCompatActivity {
         stroyText.setText("Gde hocete da bezite? Suma je kraci put da se stigne do grada. A ako odete putem ka gradu duze je ali je sve osvetljeno.");
         left.setText("Suma");
         right.setText("Gradski put");
+        String packageName = getPackageName();
+        sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        int id = sharedPreferences.getInt("id", 1);
         userRepository = new UserRepository(getApplication());
+        user = userRepository.find(id);
     }
     public void odabir(View view) {
         switch (view.getId()) {
@@ -40,12 +46,10 @@ public class Run extends AppCompatActivity {
                 startActivity(intentl);
                 break;
             case R.id.rightb:
-                if(run){
-                    run = false;
-                    String packageName = getPackageName();
-                    SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
-                    int id = sharedPreferences.getInt("id", 0);
-                    user = userRepository.find(id);
+                boolean isRun =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isRun", true);
+                if(isRun){
+                    getSharedPreferences("end", MODE_PRIVATE).edit()
+                            .putBoolean("isRun", false).apply();
                     int ends = user.getEnds();
                     ends+=1;
                     user.setEnds(ends);

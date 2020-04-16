@@ -16,8 +16,7 @@ import com.filip.horrornight.User;
 import com.filip.horrornight.UserRepository;
 
 public class Forest extends AppCompatActivity {
-    Boolean forest1 = true;
-    Boolean forest2 = true;
+    SharedPreferences sharedPreferences;
     UserRepository userRepository;
     User user;
     @Override
@@ -33,7 +32,7 @@ public class Forest extends AppCompatActivity {
         left.setText("Pomocices mu");
         right.setText("Neces mu pomoci");
         String packageName = getPackageName();
-        SharedPreferences sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
         int id = sharedPreferences.getInt("id", 1);
         userRepository = new UserRepository(getApplication());
         user = userRepository.find(id);
@@ -42,8 +41,10 @@ public class Forest extends AppCompatActivity {
         String kraj;
         switch (view.getId()) {
             case R.id.leftb:
-                if(forest1){
-                    forest1 = false;
+                boolean isForest1 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isForest1", true);
+                if(isForest1){
+                    getSharedPreferences("end", MODE_PRIVATE).edit()
+                            .putBoolean("isForest1", false).apply();
                     int ends = user.getEnds();
                     ends+=1;
                     user.setEnds(ends);
@@ -57,8 +58,10 @@ public class Forest extends AppCompatActivity {
                 startActivity(intentl);
                 break;
             case R.id.rightb:
-                if(forest2){
-                    forest2 = false;
+                boolean isForest2 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isForest2", true);
+                if(isForest2){
+                    getSharedPreferences("end", MODE_PRIVATE).edit()
+                            .putBoolean("isForest2", false).apply();
                     int ends = user.getEnds();
                     ends+=1;
                     user.setEnds(ends);
