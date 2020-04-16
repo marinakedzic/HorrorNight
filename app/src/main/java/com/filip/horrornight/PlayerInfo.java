@@ -1,6 +1,7 @@
 package com.filip.horrornight;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Application;
@@ -43,5 +44,9 @@ public class PlayerInfo extends AppCompatActivity {
         intent.putExtra("ime", userName);
         intent.putExtra("drug", friendName);
         startActivity(intent);
+    }
+    @Override
+    public void onBackPressed(){
+        NavUtils.navigateUpFromSameTask(this);
     }
 }

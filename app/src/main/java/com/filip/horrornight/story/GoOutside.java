@@ -1,6 +1,7 @@
 package com.filip.horrornight.story;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,5 +38,9 @@ public class GoOutside extends AppCompatActivity {
                 startActivity(intentr);
                 break;
         }
+    }
+    @Override
+    public void onBackPressed(){
+        NavUtils.navigateUpFromSameTask(this);
     }
 }

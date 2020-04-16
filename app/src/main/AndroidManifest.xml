@@ -9,17 +9,57 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".EditProfile"></activity>
-        <activity android:name=".ShowPlayer" />
-        <activity android:name=".PlayerScreen" />
-        <activity android:name=".story.Forest" />
-        <activity android:name=".story.Run" />
-        <activity android:name=".story.GoInside" />
-        <activity android:name=".End" />
-        <activity android:name=".story.GoOutside" />
-        <activity android:name=".story.StayHome" />
-        <activity android:name=".Start" />
-        <activity android:name=".PlayerInfo" />
+        <activity android:name=".EditProfile" android:parentActivityName="com.filip.horrornight.ShowPlayer">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.ShowPlayer"/>
+        </activity>
+        <activity android:name=".ShowPlayer" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
+        <activity android:name=".PlayerScreen"/>
+        <activity android:name=".story.Forest" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
+        <activity android:name=".story.Run" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
+        <activity android:name=".story.GoInside" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
+        <activity android:name=".End" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
+        <activity android:name=".story.GoOutside" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
+        <activity android:name=".story.StayHome" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
+        <activity android:name=".Start" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
+        <activity android:name=".PlayerInfo" android:parentActivityName="com.filip.horrornight.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.filip.horrornight.MainActivity"/>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

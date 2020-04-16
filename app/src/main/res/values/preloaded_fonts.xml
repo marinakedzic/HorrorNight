@@ -3,5 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/coda</item>
         <item>@font/creepster</item>
+        <item>@font/im_fell_dw_pica</item>
     </array>
 </resources>

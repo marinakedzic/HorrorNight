@@ -1,6 +1,7 @@
 package com.filip.horrornight;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,5 +24,9 @@ public class PlayerScreen extends AppCompatActivity {
     public void showProfile(View view) {
         Intent intent = new Intent(this,ShowPlayer.class);
         startActivity(intent);
+    }
+
+    public void exit(View view) {
+        finishAffinity();
     }
 }

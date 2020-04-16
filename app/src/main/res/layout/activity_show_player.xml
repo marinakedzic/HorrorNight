@@ -26,76 +26,80 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:background="#B0FFFFFF"
-        android:fontFamily="@font/coda"
+        android:fontFamily="@font/im_fell_dw_pica"
         android:text="Your name: "
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_below="@id/textView"/>
+        android:textSize="25sp" />
+
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
         android:background="#B0FFFFFF"
-        android:fontFamily="@font/coda"
+        android:fontFamily="@font/im_fell_dw_pica"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_below="@id/name"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/friend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="29dp"
         android:background="#B0FFFFFF"
-        android:fontFamily="@font/coda"
+        android:fontFamily="@font/im_fell_dw_pica"
         android:text="Friend's name:"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_below="@id/username"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="25sp" />
+
     <TextView
         android:id="@+id/friendname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/friend"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="29dp"
         android:background="#B0FFFFFF"
-        android:fontFamily="@font/coda"
+        android:fontFamily="@font/im_fell_dw_pica"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_below="@id/friend"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="20sp" />
+
     <TextView
         android:id="@+id/end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/friendname"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="29dp"
         android:background="#B0FFFFFF"
-        android:fontFamily="@font/coda"
+        android:fontFamily="@font/im_fell_dw_pica"
         android:text="How many ends you found:"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_below="@id/friendname"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="25sp" />
+
     <TextView
         android:id="@+id/ends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/end"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="29dp"
         android:background="#B0FFFFFF"
-        android:fontFamily="@font/coda"
+        android:fontFamily="@font/im_fell_dw_pica"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_below="@id/end"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="20sp" />
 
     <LinearLayout
         android:id="@+id/buttons"
@@ -121,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Delete"
+            android:text="RESTART"
             android:textSize="30sp"
             android:onClick="onDelete"
             android:fontFamily="@font/creepster"

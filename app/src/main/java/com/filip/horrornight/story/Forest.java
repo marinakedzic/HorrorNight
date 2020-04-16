@@ -1,6 +1,7 @@
 package com.filip.horrornight.story;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -75,5 +76,9 @@ public class Forest extends AppCompatActivity {
                 startActivity(intentr);
                 break;
         }
+    }
+    @Override
+    public void onBackPressed(){
+        NavUtils.navigateUpFromSameTask(this);
     }
 }

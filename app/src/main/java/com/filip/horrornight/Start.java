@@ -1,6 +1,7 @@
 package com.filip.horrornight;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,5 +41,9 @@ public class Start extends AppCompatActivity {
                 startActivity(intentr);
                 break;
         }
+    }
+    @Override
+    public void onBackPressed(){
+        NavUtils.navigateUpFromSameTask(this);
     }
 }

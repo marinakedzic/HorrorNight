@@ -30,10 +30,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
         android:background="#B0FFFFFF"
-        android:fontFamily="@font/coda"
+        android:fontFamily="@font/im_fell_dw_pica"
         android:text="Type your name:"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="25sp" />
 
     <EditText
         android:id="@+id/userName"
@@ -55,10 +55,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="29dp"
         android:background="#B0FFFFFF"
-        android:fontFamily="@font/coda"
+        android:fontFamily="@font/im_fell_dw_pica"
         android:text="Type your friend's name:"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="25sp" />
 
     <EditText
         android:id="@+id/friendName"

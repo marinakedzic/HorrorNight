@@ -1,6 +1,7 @@
 package com.filip.horrornight;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -53,5 +54,9 @@ public class ShowPlayer extends AppCompatActivity {
         Intent intent = new Intent(this,EditProfile.class);
         intent.getIntExtra("id", id);
         startActivity(intent);
+    }
+    @Override
+    public void onBackPressed(){
+        NavUtils.navigateUpFromSameTask(this);
     }
 }

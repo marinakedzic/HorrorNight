@@ -20,13 +20,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_margin="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="#73000000"
+        android:fontFamily="@font/im_fell_dw_pica"
+        android:gravity="center"
         android:padding="10dp"
-        android:background="#33000000"
         android:textColor="#ffffff"
-        android:textSize="27sp"
-        android:fontFamily="@font/coda"
-        android:gravity="center"/>
+        android:textSize="27sp" />
     <LinearLayout
         android:id="@+id/buttons"
         android:layout_width="match_parent"
