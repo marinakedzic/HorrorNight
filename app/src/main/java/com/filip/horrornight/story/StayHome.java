@@ -29,9 +29,9 @@ public class StayHome extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.kitchen);
-        stroyText.setText("Ipak ostajes sta ces sad da uradis, jesi li se uplasio ili ne?");
-        left.setText("Proverices kuhinju");
-        right.setText("Bezis ispod kreveta");
+        stroyText.setText(R.string.storyStayHome);
+        left.setText(R.string.kitchen);
+        right.setText(R.string.bed);
         String packageName = getPackageName();
         sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
         int id = sharedPreferences.getInt("id", 1);
@@ -39,8 +39,8 @@ public class StayHome extends AppCompatActivity {
         user = userRepository.find(id);
     }
     public void odabir(View view) {
-        String kraj;
-        Boolean uspeh = false;
+        String end;
+        Boolean success = false;
         switch (view.getId()) {
             case R.id.leftb:
                 boolean isStay1 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isStay1", true);
@@ -56,11 +56,11 @@ public class StayHome extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                kraj= "Je l stvarno mislis da je pametno otici direktno ka ludaku?";
+                end = getString(R.string.endMurderer);
                 Intent intentl = new Intent(this, End.class);
-                intentl.putExtra("kraj",kraj);
-                intentl.putExtra("uspeh",uspeh);
-                intentl.putExtra("slika",R.drawable.h);
+                intentl.putExtra("end",end);
+                intentl.putExtra("success",success);
+                intentl.putExtra("image",R.drawable.murderer);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
@@ -77,11 +77,11 @@ public class StayHome extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                kraj = "Sta mislis gde ce prvo da pogleda?";
+                end = getString(R.string.endBed);
                 Intent intentr = new Intent(this, End.class);
-                intentr.putExtra("kraj",kraj);
-                intentr.putExtra("uspeh",uspeh);
-                intentr.putExtra("slika",R.drawable.underbed);
+                intentr.putExtra("end",end);
+                intentr.putExtra("success",success);
+                intentr.putExtra("image",R.drawable.underbed);
                 startActivity(intentr);
                 break;
         }

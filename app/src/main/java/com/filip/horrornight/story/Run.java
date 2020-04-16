@@ -30,12 +30,11 @@ public class Run extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.run);
-        stroyText.setText("Gde hocete da bezite? Suma je kraci put da se stigne do grada. A ako odete putem ka gradu duze je ali je sve osvetljeno.");
-        left.setText("Suma");
-        right.setText("Gradski put");
+        stroyText.setText(R.string.storyRun);
+        left.setText(R.string.forest);
+        right.setText(R.string.city);
         String packageName = getPackageName();
         sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
-        editor = sharedPreferences.edit();
         int id = sharedPreferences.getInt("id", 1);
         userRepository = new UserRepository(getApplication());
         user = userRepository.find(id);
@@ -56,11 +55,11 @@ public class Run extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                String kraj = "Izabrali ste bezbedan put. Imate srece susrece vas komsija.";
+                String end = getString(R.string.endCity);
                 Intent intentr = new Intent(this, End.class);
-                intentr.putExtra("kraj",kraj);
-                intentr.putExtra("uspeh", true);
-                intentr.putExtra("slika", R.drawable.komsa);
+                intentr.putExtra("end",end);
+                intentr.putExtra("success", true);
+                intentr.putExtra("image", R.drawable.neighbour);
                 startActivity(intentr);
                 break;
         }

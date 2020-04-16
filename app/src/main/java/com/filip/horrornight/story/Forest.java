@@ -29,9 +29,9 @@ public class Forest extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.background);
-        stroyText.setText("Klasika drug ti se sapleo jer msm sto da ne kad je svakako smotan.");
-        left.setText("Pomocices mu");
-        right.setText("Neces mu pomoci");
+        stroyText.setText(R.string.storyForest);
+        left.setText(R.string.help);
+        right.setText(R.string.noHelp);
         String packageName = getPackageName();
         sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
         int id = sharedPreferences.getInt("id", 1);
@@ -39,7 +39,7 @@ public class Forest extends AppCompatActivity {
         user = userRepository.find(id);
     }
     public void odabir(View view) {
-        String kraj;
+        String end;
         switch (view.getId()) {
             case R.id.leftb:
                 boolean isForest1 =  getSharedPreferences("end", MODE_PRIVATE).getBoolean("isForest1", true);
@@ -51,11 +51,11 @@ public class Forest extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                kraj= "Ko je ikada preziveo kad se sapleo u sumi.";
+                end= getString(R.string.endHelp);
                 Intent intentl = new Intent(this, End.class);
-                intentl.putExtra("kraj",kraj);
-                intentl.putExtra("uspeh",false);
-                intentl.putExtra("slika",R.drawable.help);
+                intentl.putExtra("end",end);
+                intentl.putExtra("success",false);
+                intentl.putExtra("image",R.drawable.help);
                 startActivity(intentl);
                 break;
             case R.id.rightb:
@@ -68,11 +68,11 @@ public class Forest extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                kraj = "Mislis li stvarno da izdajice prezivljavaju. Shame on you!";
+                end = getString(R.string.endNoHelp);
                 Intent intentr = new Intent(this, End.class);
-                intentr.putExtra("kraj",kraj);
-                intentr.putExtra("uspeh",false);
-                intentr.putExtra("slika",R.drawable.nohelp);
+                intentr.putExtra("end",end);
+                intentr.putExtra("success",false);
+                intentr.putExtra("image",R.drawable.nohelp);
                 startActivity(intentr);
                 break;
         }

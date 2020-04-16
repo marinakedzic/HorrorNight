@@ -2,17 +2,11 @@ package com.filip.horrornight;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
-import androidx.lifecycle.ViewModelProvider;
-
-import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 public class PlayerInfo extends AppCompatActivity {
     UserRepository userRepository;
@@ -41,8 +35,6 @@ public class PlayerInfo extends AppCompatActivity {
         editor.apply();
 
         Intent intent = new Intent(this,Start.class);
-        intent.putExtra("ime", userName);
-        intent.putExtra("drug", friendName);
         startActivity(intent);
     }
     @Override

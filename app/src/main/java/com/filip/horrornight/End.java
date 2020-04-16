@@ -21,29 +21,29 @@ public class End extends AppCompatActivity {
 
         Button again = findViewById(R.id.again);
         Intent intent = getIntent();
-        String bravo = null;
-        String kraj = null;
-        boolean uspeh = false;
-        int slika;
+        String alive = null;
+        String end = null;
+        boolean success;
+        int imageId;
 
         if(intent != null)
         {
-            kraj = intent.getStringExtra("kraj");
-            uspeh = intent.getBooleanExtra("uspeh", false);
-            slika = intent.getIntExtra("slika",R.drawable.h);
-            image.setImageResource(slika);
+            end = intent.getStringExtra("end");
+            success = intent.getBooleanExtra("success", false);
+            imageId = intent.getIntExtra("image",R.drawable.murderer);
+            image.setImageResource(imageId);
 
-            if(uspeh){
-             bravo = "Bravo uspesno si ovo odradio";
-             again.setText("TRY MORE!");
+            if(success){
+                alive = getString(R.string.aliveTure);
+                again.setText(R.string.tryMore);
             }
             else{
-                bravo = "Zao mi je, niste uspeli";
-                again.setText("TRY AGAIN!");
+                alive = getString(R.string.aliveFalse);
+                again.setText(R.string.tryAgain);
             }
         }
-        String end = bravo + " " + kraj;
-        stroyText.setText(end);
+        String endAll = alive + " " + end;
+        stroyText.setText(endAll);
 
 
 

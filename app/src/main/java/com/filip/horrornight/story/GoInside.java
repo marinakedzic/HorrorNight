@@ -30,15 +30,11 @@ public class GoInside extends AppCompatActivity {
         Button left = findViewById(R.id.leftb);
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.goagain);
-        stroyText.setText("Odlucio si da ipak udjete. Drug predlaze da se odvojite i da trazite manijaka.");
-        left.setText("Poslusaj ga");
-        right.setText("Ipak idete zajedno");
+        stroyText.setText(R.string.goInside);
+        left.setText(R.string.agreeInside);
+        right.setText(R.string.dontAgreeInside);
         String packageName = getPackageName();
         sharedPreferences = getSharedPreferences(packageName, MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-        editor.putBoolean("inside1",true);
-        editor.putBoolean("inside2",true);
-        editor.apply();
         int id = sharedPreferences.getInt("id", 1);
         userRepository = new UserRepository(getApplication());
         user = userRepository.find(id);
@@ -56,7 +52,7 @@ public class GoInside extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                kraj = "Od kad je pametno da se odvajate ma daj prvo i osnovno pravilo u filmovima.";
+                kraj = getString(R.string.endSplit);
                 Intent intentl = new Intent(this, End.class);
                 intentl.putExtra("kraj", kraj);
                 intentl.putExtra("uspeh",false);
@@ -73,7 +69,7 @@ public class GoInside extends AppCompatActivity {
                     user.setEnds(ends);
                     userRepository.update(user);
                 }
-                kraj = "Bravo bre uspeli ste da savladate manijaka!";
+                kraj = getString(R.string.endNoSplit);
                 Intent intentr = new Intent(this, End.class);
                 intentr.putExtra("kraj", kraj);
                 intentr.putExtra("uspeh",true);

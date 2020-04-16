@@ -2,6 +2,34 @@
     <string name="app_name">HorrorNight</string>
     <string name="horor_night">HOROR\nNIGHT</string>
     <string name="play">Play</string>
+    <string name="help">Help</string>
+    <string name="noHelp">No Help</string>
+    <string name="agreeInside">Agree</string>
+    <string name="dontAgreeInside">Do not agree</string>
+    <string name="agreeOutside">Agree</string>
+    <string name="dontAgreeOutside">Do not agree</string>
+    <string name="forest">Forest</string>
+    <string name="city">City</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="bed">Under bed</string>
+    <string name="stayHome">Stay Home</string>
+    <string name="runOutside">Go Outside</string>
+    <string name="tryMore">TRY MORE!</string>
+    <string name="tryAgain">TRY AGAIN!</string>
     <string name="storystart">Sedis kuci i ciliras u netflix, odjednom nestaje struja i cujes neko iz kuhinje izgovara tvoje ime i cujes zvuk ostrenja noza</string>
     <string name="goOutside">Pobegao si iz kuce, ali te susrece drug i ti mu ispricas sta se desilo. On kaze da si se utripovao i da se lepo vratite unutra da proverite ima li stvarno nekoga.</string>
+    <string name="goInside">Odlucio si da ipak udjete. Drug predlaze da se odvojite i da trazite manijaka.</string>
+    <string name="endSplit">Od kad je pametno da se odvajate ma daj prvo i osnovno pravilo u filmovima.</string>
+    <string name="endNoSplit">Bravo bre uspeli ste da savladate manijaka!</string>
+    <string name="storyRun">Gde hocete da bezite? Suma je kraci put da se stigne do grada. A ako odete putem ka gradu duze je ali je sve osvetljeno.</string>
+    <string name="endCity">Izabrali ste bezbedan put. Imate srece susrece vas komsija.</string>
+    <string name="storyStayHome">Ipak ostajes sta ces sad da uradis, jesi li se uplasio ili ne?</string>
+    <string name="endMurderer">Je l stvarno mislis da je pametno otici direktno ka ludaku?</string>
+    <string name="endBed">Sta mislis gde ce prvo da pogleda?</string>
+    <string name="storyForest">Klasika drug ti se sapleo jer msm sto da ne kad je svakako smotan.</string>
+    <string name="endHelp">Ko je ikada preziveo kad se sapleo u sumi?</string>
+    <string name="endNoHelp">Mislis li stvarno da izdajice prezivljavaju. Shame on you!</string>
+    <string name="aliveTure">Good job!</string>
+    <string name="aliveFalse">Sorry, you do not succeed</string>
+
 </resources>

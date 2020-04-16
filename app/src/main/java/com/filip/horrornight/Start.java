@@ -25,8 +25,8 @@ public class Start extends AppCompatActivity {
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.netflix);
         stroyText.setText(R.string.storystart);
-        left.setText("Ostajes kuci");
-        right.setText("Bezis napolje");
+        left.setText(R.string.stayHome);
+        right.setText(R.string.runOutside);
 
     }
 

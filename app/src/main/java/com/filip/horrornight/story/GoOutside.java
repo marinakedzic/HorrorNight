@@ -24,8 +24,8 @@ public class GoOutside extends AppCompatActivity {
         Button right = findViewById(R.id.rightb);
         image.setImageResource(R.drawable.outside);
         stroyText.setText(R.string.goOutside);
-        left.setText("Vrati se u kucu");
-        right.setText("Bezite zajedno");
+        left.setText(R.string.agreeOutside);
+        right.setText(R.string.dontAgreeOutside);
     }
     public void odabir(View view) {
         switch (view.getId()) {
