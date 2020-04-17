@@ -17,7 +17,7 @@
     <string name="tryMore">TRY MORE!</string>
     <string name="tryAgain">TRY AGAIN!</string>
     <string name="storystart">%1$s you are sitting home and chilling with Netflix, when suddenly there is power outage. You hear a sound coming from the kitchen of someone saying your name, as well as the sound of knife sharpening.</string>
-    <string name="goOutside">You have ran away from the house, but you see %1$s and %1$s asks you to tell him what has happened. After hearing your story, %1$s says that you are only tripping and suggests to nicely return home and see if someone is actually in the house.</string>
+    <string name="goOutside">You have ran away from the house, but you see %1$s and %1$s asks you what has happened. After hearing your story, %1$s says that you are only tripping and suggests to nicely return home and see if someone is actually in the house.</string>
     <string name="goInside">You decide to enter anyway. %1$s suggests for you two to look for the maniac separately.</string>
     <string name="storyRun">Where do you want to run away? Forest is a shortcut to the city. However the road to the city is laminated.</string>
     <string name="storyStayHome">You decide to stay. What will you do? You want to go check or you’re scared?</string>
